@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Listar Plantio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let plantio of listaPlantio | async">
+      <ion-label>{{plantio.nome}}</ion-label>
+      <ion-label>{{plantio.solo}}</ion-label>
+      <ion-label>{{plantio.clima}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

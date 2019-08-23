@@ -1,4 +1,4 @@
-import { AngularFireModule } from '@angular/fire’;
+import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';

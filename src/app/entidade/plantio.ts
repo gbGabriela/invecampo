@@ -1,7 +1,7 @@
 export class Plantio {
 
-  nome: String;
-  solo: String;
-  clima: String;
+  nome: string;
+  solo: string;
+  clima: string;
 
 }

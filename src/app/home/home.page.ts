@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AngularFireAuth } from "angularfire2/auth";
+import { Usuario } from "../entidade/usuario";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,22 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  usuario: Usuario = new Usuario();
+
+  constructor(private afAuth: AngularFireAuth, private router: Router){}
+
+  login(){
+
+    this.afAuth.auth.signInWithEmailAndPassword(this.usuario.email, this.usuario.senha).then(
+      () => {this.router.navigate(['pagina']); } ).catch( (erro) => console.log(erro) );
+
+  }
+
+  logout() {
+
+    this.afAuth.auth.signOut();
+    this.router.navigate(['/']);
+
+  }
 
 }
