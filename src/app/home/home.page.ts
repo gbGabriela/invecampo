@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from "angularfire2/auth";
 import { Usuario } from "../entidade/usuario";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,10 @@ export class HomePage {
 
   usuario: Usuario = new Usuario();
 
-  constructor(private afAuth: AngularFireAuth, private router: Router){}
+  constructor(
+    private afAuth: AngularFireAuth,
+    private router: Router
+  ){}
 
   login(){
 
