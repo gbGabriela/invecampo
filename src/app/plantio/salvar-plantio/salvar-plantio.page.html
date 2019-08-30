@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="pagina"></ion-back-button>
+    </ion-buttons>
     <ion-title>Adicionar Plantio</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -18,7 +21,11 @@
 
     <ion-label position="floating">Solo: </ion-label>
 
-    <ion-input name="solo" [(ngModel)] = "plantio.solo"> </ion-input>
+    <ion-select [(ngModel)]="plantio.solo">
+      <ion-select-option *ngFor='let solo of listaSolo | async'
+        [value]="solo" >{{solo.tipo}}
+      </ion-select-option>
+    </ion-select>
 
   </ion-item>
 

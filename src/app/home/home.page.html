@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      INVECAMPO
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,4 +10,6 @@
   <ion-input type="text" name="e-mail" [(ngModel)]="usuario.email">E-mail:</ion-input>
   <ion-input type="password" name="senha" [(ngModel)]="usuario.senha">Senha:</ion-input>
   <ion-button (click)="login()">Acessar</ion-button>
+  <ion-button (click)="criarUsuario()">Criar Novo Usuário</ion-button>
+  <ion-button (click)="redefinirSenha()">Esqueci Minha Senha</ion-button>
 </ion-content>

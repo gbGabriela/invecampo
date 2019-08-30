@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="pagina"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar Solo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+
+    <ion-label position="floating">Tipo: </ion-label>
+
+    <ion-input name="solo" [(ngModel)] = "solo.tipo"> </ion-input>
+
+  </ion-item>
+
+  <ion-button (click)="salvar()" expand="block" >SALVAR</ion-button>
+
+</ion-content>

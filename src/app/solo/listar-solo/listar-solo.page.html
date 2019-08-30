@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="pagina"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista Solo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let solo of listaSolo | async">
+      <ion-label>{{solo.tipo}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

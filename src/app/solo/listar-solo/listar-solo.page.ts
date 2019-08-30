@@ -1,25 +1,25 @@
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Plantio } from '../../entidade/plantio';
+import { Solo } from '../../entidade/solo';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-listar-plantio',
-  templateUrl: './listar-plantio.page.html',
-  styleUrls: ['./listar-plantio.page.scss'],
+  selector: 'app-listar-solo',
+  templateUrl: './listar-solo.page.html',
+  styleUrls: ['./listar-solo.page.scss'],
 })
-export class ListarPlantioPage implements OnInit {
+export class ListarSoloPage implements OnInit {
 
-  listaPlantio: Observable<Plantio[]>;
+  listaSolo: Observable<Solo[]>;
 
   constructor(
     private fire: AngularFireDatabase,
     private rota: Router
    ){
 
-    this.listaPlantio = this.fire.list<Plantio>('plantio').snapshotChanges().pipe(
+    this.listaSolo = this.fire.list<Solo>('solo').snapshotChanges().pipe(
       map(lista => lista.map(
         linha => ({key: linha.payload.key, ... linha.payload.val() })
         )
@@ -31,9 +31,4 @@ export class ListarPlantioPage implements OnInit {
   ngOnInit() {
 
   }
-
-  excluir(key:string){
-    this.fire.object('plantio/'+key).remove();
-  }
-
 }

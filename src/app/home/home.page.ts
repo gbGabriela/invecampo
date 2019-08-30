@@ -31,4 +31,23 @@ export class HomePage {
 
   }
 
+  redefinirSenha(): void {
+   if(this.usuario.email){
+     this.afAuth.auth.sendPasswordResetEmail(this.usuario.email)
+     .then((res) => alert('Email enviado!'))
+     .catch((err) => console.log(err));
+   }
+ }
+
+ criarUsuario(): void{
+
+     this.afAuth.auth.createUserWithEmailAndPassword(this.usuario.email,
+        this.usuario.senha)
+        .then( (res) => {
+           this.router.navigate(['pagina']);
+        }).catch((erro) => {
+           console.log(erro);
+        });
+ }
+
 }

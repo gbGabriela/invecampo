@@ -7,6 +7,9 @@ const routes: Routes = [
   { path: 'salvar-plantio', loadChildren: './plantio/salvar-plantio/salvar-plantio.module#SalvarPlantioPageModule' },
   { path: 'pagina', loadChildren: './pagina/pagina.module#PaginaPageModule' },
   { path: 'listar-plantio', loadChildren: './plantio/listar-plantio/listar-plantio.module#ListarPlantioPageModule' },
+  { path: 'salvar-solo', loadChildren: './solo/salvar-solo/salvar-solo.module#SalvarSoloPageModule' },
+  { path: 'listar-solo', loadChildren: './solo/listar-solo/listar-solo.module#ListarSoloPageModule' },
+  { path: 'filtro-plantio', loadChildren: './filtro/filtro-plantio/filtro-plantio.module#FiltroPlantioPageModule' },
 ];
 
 @NgModule({

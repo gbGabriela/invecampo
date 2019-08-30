@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Consulta Plantio com Filtro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Filtro Nome</h2>
+  <ion-item>
+    <ion-label position="floating">Escolha um filtro</ion-label>
+    <ion-select [(ngModel)]="nome" (ionChange)="filtrar('nome', nome)">
+      <ion-select-option *ngFor='let pantio of listaPlantio | async' [value]="plantio.nome" >{{plantio.nome}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-button *ngIf="plantio" (click)="removeFilter('nome')">Remove filtro</ion-button>
+
+  <h2>Filtro Solo</h2>
+  <ion-item>
+    <ion-label position="floating">Digite o filtro</ion-label>
+    <ion-input type="text" [(ngModel)]="solo" (change)="filtrar('solo', solo)"></ion-input>
+  </ion-item>
+  <ion-button *ngIf="" (click)="removeFilter('solo')">Remove filter</ion-button>
+
+  <h2>Filtro Clima</h2>
+  <ion-item>
+    <ion-label position="floating">Digite o filtro</ion-label>
+    <ion-input type="text" [(ngModel)]="clima" (change)="filtrar('clima', clima)"></ion-input>
+  </ion-item>
+  <ion-button *ngIf="" (click)="removeFilter('clima')">Remove filter</ion-button>
+  <div >
+    <ion-list>
+      <ion-item *ngFor="let e of filtroPlantio">
+        <ion-label>{{p.nome}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>
